@@ -1,61 +1,104 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body {
-  height: 100vh;
-  font-family: Arial, sans-serif;
+body{
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Top sections */
-.header {
-  height: 10vh;
-  background: #1abc9c;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.header{
+    height: 10vh;
+    background-color: rgb(168, 214, 255);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+.logo{
+    font-weight: bolder;
+    font-size: 20px;
 }
 
-.banner {
-  height: 15vh;
-  background: #3498db;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.nav a{
+    margin-left: 15px;
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+
 }
 
-/* Main content (left/right) */
-.content {
-  height: 55vh;
-  display: flex; /* THIS is the key */
+.banner{
+    height: 15vh;
+    background-color: rgb(127, 165, 198);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Left side */
-.sidebar {
-  width: 30%;
-  background: #f39c12;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.content{
+    height: 55vh;
+   display: flex;
 }
 
-/* Right side */
-.main-area {
-  width: 70%;
-  background: #ecf0f1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.sidebar{
+    width:20%;
+    background-color: aquamarine;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main-area{
+    width:80%;
+    background-color: rgb(8, 143, 98);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer{
+    height: 20vh;
+    background-color: cadetblue;
+    align-items: center;
+    justify-content: center;
+    display: flex;
 }
 
-/* Footer */
-.footer {
-  height: 20vh;
-  background: #2c3e50;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+@media (max-width: 768px){
+
+    .header{
+       
+        flex-direction: column;
+        height: auto;
+        padding: 10px ;
+        
+    }
+    .nav{
+        margin-top: 10px;
+    }
+    .nav a{
+        margin: 0 10px;
+    }
+    .content{
+        flex-direction: column;
+        height: auto;
+    }
+     
+    .sidebar,
+    .main-area {
+        width: 100%;
+        height: 200px;
+    }
+
+
+    .banner,
+    .footer{
+        height: 150px;
+    }
+
+
 }
+
+    
+
