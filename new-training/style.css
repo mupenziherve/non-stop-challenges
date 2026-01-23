@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+/* Top sections */
+.header {
+  height: 10vh;
+  background: #1abc9c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner {
+  height: 15vh;
+  background: #3498db;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Main content (left/right) */
+.content {
+  height: 55vh;
+  display: flex; /* THIS is the key */
+}
+
+/* Left side */
+.sidebar {
+  width: 30%;
+  background: #f39c12;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Right side */
+.main-area {
+  width: 70%;
+  background: #ecf0f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Footer */
+.footer {
+  height: 20vh;
+  background: #2c3e50;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
