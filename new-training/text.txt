@@ -44,7 +44,7 @@ body{
 }
 
 .hero{
-    height: 70vh;
+    height: 100vh;
     background: linear-gradient(rgb(152, 255, 152),white);
     color: rgb(82, 63, 0);
     display: flex;
@@ -102,10 +102,9 @@ body{
     
     padding-bottom: 30px;
 }
-.services-boxes{
+.service-boxes{
     
     display: flex;
-
     margin-top: 30px ;
     gap: 20px;
     
@@ -116,11 +115,4 @@ body{
     padding: 30px;
     flex: 1;
     border-radius: 5px;
-}
-
-.service img{
-
-    height: 40px;
-   
-
 }
