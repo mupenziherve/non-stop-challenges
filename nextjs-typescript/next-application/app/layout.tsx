@@ -1,5 +1,6 @@
 import './globals.css'
 import type { Metadata } from 'next'
+import Footer from './components/Footer'
 
 export const metadata: Metadata = {
   title: 'next-application',
@@ -13,7 +14,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" data-theme="night">
-      <body>{children}</body>
+      <body className="min-h-screen flex flex-col">
+        <main className="flex-grow">{children}</main>
+
+        <Footer />
+      </body>
     </html>
   )
 }
