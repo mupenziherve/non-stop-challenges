@@ -14,7 +14,7 @@ const users: User[] = await res.json();
 
   return (
     <>
-    <h1>Users</h1>
+    <h1 >Users</h1>
     <h1>{new Date().toLocaleTimeString()}</h1>
     <ul>
       {users.map(user => <li key={user.id}>{user.title}</li> )}
