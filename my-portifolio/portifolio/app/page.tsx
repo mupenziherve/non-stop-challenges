@@ -1,5 +1,6 @@
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
+import AboutSection from "./components/AboutSection"
 
 export default function Home() {
   return (
@@ -7,6 +8,7 @@ export default function Home() {
  <Navbar />
       <div className="container mt-40 mx-auto ">
         <HeroSection />
+        <AboutSection/>
       </div>
 
     </main>
