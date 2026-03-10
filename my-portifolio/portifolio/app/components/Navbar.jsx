@@ -4,6 +4,8 @@ import Link from 'next/link'
 import NavLink from './NavLink'
 import React, { useState } from 'react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid'
+import MenuOverlay from './MenuOverlay'
+import Image from 'next/image'
 
 const navLinks = [
   { title: 'About', path: '#about' },
@@ -15,11 +17,16 @@ const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false)
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-10 bg-[#121212]/90">
-      <div className="flex flex-wrap items-center justify-between mx-auto p-5 py-2">
-        <Link href="/" className="text-3xl md:text-4xl text-cyan-500 font-bold">
-          {'<MH>'}
-        </Link>
+    <nav className="fixed top-0 left-0 right-0 z-10 bg-[#121212]/80 backdrop-blur-md border-b border-white/10">
+      <div className="flex items-center justify-between mx-auto max-w-7xl px-6 py-4">
+        <Image
+  src="/logo.png"
+  alt="MH Logo"
+  width={40}
+  height={40}
+  className="object-contain"
+  priority
+/>
 
         <button
           onClick={() => setNavbarOpen(!navbarOpen)}
@@ -32,8 +39,8 @@ const Navbar = () => {
           )}
         </button>
 
-        <div className="menu hidden md:block md:w-auto">
-          <ul className="flex gap-8 p-4 md:flex-row md:space-x-8 mt-0">
+        <div className="hidden md:block">
+          <ul className="flex md:space-x-10">
             {navLinks.map((link, index) => (
               <li key={index}>
                 <NavLink href={link.path} title={link.title} />
@@ -42,6 +49,8 @@ const Navbar = () => {
           </ul>
         </div>
       </div>
+
+      {navbarOpen ? <MenuOverlay links={navLinks} /> : null}
     </nav>
   )
 }
