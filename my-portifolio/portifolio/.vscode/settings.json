@@ -1,0 +1,5 @@
+{
+  "editor.inlineSuggest.suppressSuggestions": true,
+  "editor.inlineSuggest.experimental.showOnSuggestConflict": "always",
+  "editor.suggest.shareSuggestSelections": true
+}
