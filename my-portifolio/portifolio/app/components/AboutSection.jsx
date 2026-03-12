@@ -1,11 +1,31 @@
 "use client";
 import { useTransition,useState } from "react";
 import Image from "next/image";
+import TabButton from "./TabButton";
 
+
+const TAB_DATA = [
+  {
+    title: 'Skills',
+    id: 'skills',
+    content: (
+      <ul>
+        <li>JavaScript</li>
+        <li>TypeScript</li>
+        <li>Next.js</li>
+        <li>Next.js</li>
+        <li>Next.js</li>
+        <li>Next.js</li>
+        <li>Next.js</li>
+        <li>Next.js</li>
+      </ul>
+    ),
+  },
+]
 const AboutSection = () => {
 
   const [tab, setTab]= useState("skills");
-  const [startTransition, isPending] = useTransition();
+  const [isPending, startTransition ] = useTransition();
 
  const handleTabChange = (id)=>{
   startTransition(() =>{
@@ -30,9 +50,25 @@ const AboutSection = () => {
             applications.
           </p>
           <div className="flex flex-row mt-8 ">
-            <span className="mr-3 font-semibold hover:text-white text-[#ADB7BE] border-b border-b-cyan-500">Skills</span>
-            <span>Education</span>
-            <span>Experience</span>
+            <TabButton
+              selectTab={() => handleTabChange('skills')}
+              active={tab === 'skills'}
+            >{""}
+              Skills{""}
+            </TabButton>
+            <TabButton
+              selectTab={() => handleTabChange('education')}
+              active={tab === 'education'}
+            >{""}
+             Education{""}
+            </TabButton>
+            <TabButton
+              selectTab={() => handleTabChange('certification')}
+              active={tab === 'certification'}
+            >{""}
+              Certification{""}
+            </TabButton>
+            
           </div>
         </div>
       </div>
