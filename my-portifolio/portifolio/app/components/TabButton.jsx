@@ -13,3 +13,8 @@ const TabButton = ({ active, selectTab,children }) => {
   )
 };
 export default TabButton;
+
+// Git. I am a quick learner
+//             and I am always looking to expand my knowledge and skill set. I am a
+//             team player and I am excited to work with others to create amazing
+//             applications.
