@@ -13,11 +13,38 @@ const TAB_DATA = [
         <li>JavaScript</li>
         <li>TypeScript</li>
         <li>Next.js</li>
-        <li>Next.js</li>
-        <li>Next.js</li>
-        <li>Next.js</li>
-        <li>Next.js</li>
-        <li>Next.js</li>
+        <li>React</li>
+        <li>Figma</li>
+        <li>NestJs</li>
+        <li>MongoDB</li>
+        <li>PostgreSQL</li>
+        <li>Tailwind</li>
+        <li>Data structures and algorithms</li>
+      </ul>
+    ),
+  },
+  {
+    title: 'Education',
+    id: 'education',
+    content: (
+      <ul>
+        <li>College Saint Partrick, Diploma in Software Development </li>
+        <li>
+          University of Kigali, Bachelor of Science with Honoursin Business
+          Information Technology
+        </li>
+      </ul>
+    ),
+  },
+  {
+    title: 'Certification',
+    id: 'certification',
+    content: (
+      <ul>
+        <li>Programming Foundation with JavaScript from CodeSignal </li>
+        <li>Front-End Development Libraries Certification from FreeCodeCamp</li>
+        <li>Algorithm & Data Structure from FREECODECAMP</li>
+        <li>Advanced UI/UX design from Great Learning </li>
       </ul>
     ),
   },
@@ -41,7 +68,7 @@ const AboutSection = () => {
         <div>
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
           <p className="text-base lg:text-lg">
-            I am a full stack web developer with a passion for creating
+            I am a full stack software engineer with a passion for creating
             interactive and responsive web applications. I have experience
             working with JavaScript, React, Redux, Node.js, Express, PostgreSQL,
             TypeScript,Tailwind,Figma, HTML, CSS, and Git. I am a quick learner
@@ -53,23 +80,26 @@ const AboutSection = () => {
             <TabButton
               selectTab={() => handleTabChange('skills')}
               active={tab === 'skills'}
-            >{""}
-              Skills{""}
+            >
+              {''}
+              Skills{''}
             </TabButton>
             <TabButton
               selectTab={() => handleTabChange('education')}
               active={tab === 'education'}
-            >{""}
-             Education{""}
+            >
+              {''}
+              Education{''}
             </TabButton>
             <TabButton
               selectTab={() => handleTabChange('certification')}
               active={tab === 'certification'}
-            >{""}
-              Certification{""}
+            >
+              {''}
+              Certification{''}
             </TabButton>
-            
           </div>
+          <div className="mt-8">{TAB_DATA.find((t) => t.id === tab).content}</div>
         </div>
       </div>
     </section>
