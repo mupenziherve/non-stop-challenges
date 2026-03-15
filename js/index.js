@@ -1,8 +1,6 @@
-// document.getElementById('count-el').innerText = 5
+function increment(){
+    console.log("the button was clicked")
+}
 
-let firstBatch = 2
 
-let secordBatch = 23
 
-let count = firstBatch + secordBatch
-console.log(count)

@@ -1,0 +1,28 @@
+*{
+
+ text-align: center;
+  
+}
+
+h1{
+    
+ color: brown;
+
+}
+
+button{
+    padding: 5px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    font-size: x-small;
+    width: 100px;
+
+}
+
+#increment-btn{
+      background-color: rgb(52, 210, 157);
+}
+#decrement-btn{
+    background-color: rgb(52, 210, 157);
+}
