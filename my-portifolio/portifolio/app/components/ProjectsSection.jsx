@@ -1,7 +1,7 @@
 import { title } from "node:process";
 import ProjectCart from "./ProjetctCard";
 
-const orojectData = [
+const projectData = [
   {
     id: 1,
     title: 'Tours website',
@@ -36,18 +36,18 @@ const orojectData = [
   },
   {
     id: 5,
-    title: 'Tours website',
+    title: 'Energy website',
     description:
       'Reprehenderit aspernatur sunt saepe ullam, totam asperiores illum. Incidunt cum minima excepturi praesentium placeat.',
-    image: '/public/projects/tours.png',
+    image: '/public/projects/energy.png',
     tag: ['all', 'web'],
   },
   {
     id: 6,
-    title: 'Tours website',
+    title: 'Portifolio website',
     description:
       'Reprehenderit aspernatur sunt saepe ullam, totam asperiores illum. Incidunt cum minima excepturi praesentium placeat.',
-    image: '/public/projects/tours.png',
+    image: '/public/projects/portifolio.png',
     tag: ['all', 'web'],
   },
 ]
