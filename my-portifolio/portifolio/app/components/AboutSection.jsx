@@ -21,7 +21,7 @@ const TAB_DATA = [
           "PostgreSQL",
           "Tailwind",
           "Figma",
-          "Algorithms",
+          "Data structure & Algorithms",
         ].map((skill) => (
           <div
             key={skill}
@@ -67,7 +67,6 @@ const AboutSection = () => {
     <section id="about" className="text-white py-16 lg:py-28">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 grid md:grid-cols-2 gap-16 items-center">
 
-        {/* IMAGE */}
         <div className="flex justify-center">
           <Image
             src="/done.png"
@@ -78,7 +77,6 @@ const AboutSection = () => {
           />
         </div>
 
-        {/* TEXT */}
         <div className="flex flex-col justify-center">
 
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
@@ -92,8 +90,6 @@ const AboutSection = () => {
             technologies such as React, Next.js, Node.js, PostgreSQL, Tailwind,
             and TypeScript.
           </p>
-
-          {/* TABS */}
           <div className="flex gap-6 mt-10">
             <TabButton
               selectTab={() => setTab("skills")}
@@ -117,7 +113,6 @@ const AboutSection = () => {
             </TabButton>
           </div>
 
-          {/* ANIMATED CONTENT */}
           <div className="mt-8">
             <AnimatePresence mode="wait">
               <motion.div
