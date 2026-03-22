@@ -64,7 +64,7 @@ const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl }) => {
           {title}
         </h5>
 
-        <p className="text-[#ADB7BE] text-sm transition-transform duration-300 group-hover:translate-x-1">
+        <p className="text-[#ADB7BE] md:text-xl lg:text-xl transition-transform duration-300 group-hover:translate-x-1">
           {description}
         </p>
       </div>
