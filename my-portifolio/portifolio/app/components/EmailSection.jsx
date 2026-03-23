@@ -1,4 +1,6 @@
+"use client"
 
+import { Camera } from 'lucide-react'
 
 const EmailSection = () => {
   return (
@@ -10,9 +12,11 @@ const EmailSection = () => {
           develop scalable, high-quality digital products. Whether you have a
           project, an idea, or just want to connect, feel free to reach out.
         </p>
-        <div className="socials flex flex-row gap-2"></div>
+        <div className="socials flex flex-row gap-2">
+          <Camera />
+        </div>
       </div>
     </section>
   )
-};
-export default EmailSection;
+}
+export default EmailSection
