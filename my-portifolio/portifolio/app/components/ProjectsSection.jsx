@@ -79,12 +79,12 @@ const ProjectsSection = () => {
 
   return (
     <section id="projects" className="py-16 px-4 md:px-8">
-      {/* Title */}
+
       <h2 className="text-center text-3xl md:text-4xl font-bold text-white mb-10">
         My Projects
       </h2>
 
-      {/* Tags */}
+
       <div className="flex justify-center flex-wrap gap-3 mb-12">
         {TAGS.map((tag) => (
           <ProjectTag
@@ -96,7 +96,7 @@ const ProjectsSection = () => {
         ))}
       </div>
 
-      {/* Projects Grid */}
+     
       <ul ref={ref} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {filteredProjects.map((project, index) => (
           <motion.li

@@ -1,6 +1,8 @@
 "use client"
 
-import { Camera } from 'lucide-react'
+import Image from "next/image"
+import Link from "next/link"
+
 
 const EmailSection = () => {
   return (
@@ -12,8 +14,28 @@ const EmailSection = () => {
           develop scalable, high-quality digital products. Whether you have a
           project, an idea, or just want to connect, feel free to reach out.
         </p>
-        <div className="socials flex flex-row gap-2">
-          <Camera />
+        <div className="socials flex flex-row gap-5">
+          <Link href="https://github.com/mupenziherve" target="_blank">
+            <Image
+              src="/projects/github.svg"
+              alt="GitHub profile"
+              width={40}
+              height={40}
+              className="hover:scale-110 py-4 invert transition-transform duration-200"
+            />
+          </Link>
+          <Link
+            href="https://wa.me/250780423952?text=Hello%20Herve!%20👋"
+            target="_blank"
+          >
+            <Image
+              src="/projects/whatsapp.svg"
+              alt="WhatsApp"
+              width={40}
+              height={40}
+              className="hover:scale-110 py-4 invert transition-transform duration-200"
+            />
+          </Link>
         </div>
       </div>
     </section>
