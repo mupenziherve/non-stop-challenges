@@ -39,10 +39,53 @@ const EmailSection = () => {
         </div>
       </div>
       <div>
-        <form className="flex flex-col gap-4 ">
-          <label htmlFor="email" className="text-white block md:mb-2 text-sm font-medium ">Your email</label>
-          <input type="email" id="email" required placeholder="john@google.com" 
-          className="bg-[#1819E] border border-[#929292543] placeholder-[#9CA2A9]"></input>
+        <form className="flex flex-col">
+          <div className="mb-6">
+            <label
+              htmlFor="email"
+              className="text-white block mb-2 text-sm font-medium "
+            >
+              Your email
+            </label>
+            <input
+              type="email"
+              id="email"
+              required
+              placeholder="john@google.com"
+              className="bg-[#18191E] border border-[#92929254] placeholder-[#9CA2A9] text-gray-100  text-sm rounded-lg block w-full p-2.5"
+            ></input>
+          </div>
+
+          <div className="mb-6">
+            <label
+              htmlFor="subject"
+              className="text-white mb-2 block text-sm font-medium "
+            >
+              Subject
+            </label>
+            <input
+              type="text"
+              id="subject"
+              required
+              placeholder="What would you like to discuss?"
+              className="bg-[#18191E] border border-[#92929254] placeholder-[#9CA2A9] text-gray-100  text-sm rounded-lg block w-full p-2.5"
+            ></input>
+          </div>
+
+          <div className="mb-6">
+            <label
+              htmlFor="message"
+              className="text-white block mb-2 text-sm font-medium "
+            >
+              Message
+            </label>
+            <textarea
+              name="message"
+              id="message"
+              className="bg-[#18191E] border border-[#92929254] placeholder-[#9CA2A9] text-gray-100  text-sm rounded-lg block w-full p-2.5"
+              placeholder="Write your message here..."
+            ></textarea>
+          </div>
         </form>
       </div>
     </section>
