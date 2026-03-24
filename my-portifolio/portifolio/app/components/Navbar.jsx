@@ -2,12 +2,13 @@
 
 import Link from 'next/link'
 import NavLink from './NavLink'
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid'
 import MenuOverlay from './MenuOverlay'
 import Image from 'next/image'
 
 const navLinks = [
+  { title: 'Home', path: '#home' },
   { title: 'About', path: '#about' },
   { title: 'Projects', path: '#projects' },
   { title: 'Contact', path: '#contact' },
@@ -36,7 +37,7 @@ const Navbar = () => {
             alt="MH Logo"
             width={120}
             height={120}
-            className="w-10 md:w-14 lg:w-16 xl:w-20 h-auto object-contain hover:scale-110 transition-transform duration-300 hover:drop-shadow-[0_0_8px_#22d3ee]"
+            className="w-17 md:w-14 lg:w-20 xl:w-20 h-auto object-contain hover:scale-110 transition-transform duration-300"
             priority
           />
         </Link>

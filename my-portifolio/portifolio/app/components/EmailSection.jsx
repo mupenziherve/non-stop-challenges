@@ -8,7 +8,7 @@ const EmailSection = () => {
     <section className="relative max-w-7xl mx-auto px-6 py-28 grid md:grid-cols-2 gap-16">
       <div className="absolute inset-0 -z-10 bg-linear-to-r from-black via-gray-900 to-black" />
       <div className="absolute top-10 left-10 w-72 h-72 bg-blue-500/20 blur-3xl rounded-full" />
-      <div className="absolute bottom-10 right-10 w-72 h-72 bg-sky-500/20 blur-3xl rounded-full" />
+      <div className="absolute bottom-10 right-10 w-72 h-72 bg-blue-500/20 blur-3xl rounded-full" />
 
       <div className="flex flex-col justify-center">
         <h5 className="text-3xl font-bold text-white mb-4">Let’s Connect</h5>
@@ -84,9 +84,9 @@ const EmailSection = () => {
 
           <button
             type="submit"
-            className="w-full py-3 rounded-xl bg-linear-to-r from-blue-500 via-cyan-500 to-teal-500 text-white font-semibold hover:opacity-90 transition duration-300 shadow-lg shadow-blue-500/20"
+            className="w-full py-3 hover:scale-102 rounded-xl bg-linear-to-r from-blue-500 via-cyan-500 to-teal-500 text-white font-semibold hover:opacity-90 transition duration-300 shadow-lg shadow-blue-500/20"
           >
-            Send Message 🚀
+            Send Message 
           </button>
         </form>
       </div>

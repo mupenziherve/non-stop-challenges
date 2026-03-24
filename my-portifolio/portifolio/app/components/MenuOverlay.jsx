@@ -1,12 +1,19 @@
-import NavLink from "./NavLink";
+import NavLink from './NavLink'
 
-const MenuOverlay = ({links}) => {
-  return <ul className="flex flex-col py-4 items-center">
-    {links.map((link, index) => (
-        <li key={index}>
-        <NavLink href={link.path} title={link.title} />
+const MenuOverlay = ({ links }) => {
+  return (
+    <ul className="flex flex-col items-center py-3">
+      {links.map((link, index) => (
+        <li key={index} className="w-full max-w-xs">
+          <NavLink
+            href={link.path}
+            title={link.title}
+            className="block w-full text-center px-4 py-2 rounded-md hover:bg-gray-700/40"
+          />
         </li>
-))}
-    </ul>;
-};
-export default MenuOverlay;
+      ))}
+    </ul>
+  )
+}
+
+export default MenuOverlay
