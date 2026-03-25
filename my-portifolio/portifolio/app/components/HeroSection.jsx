@@ -25,7 +25,6 @@ const HeroSection = () => {
               ]}
               wrapper="span"
               speed={50}
-              
               repeat={Infinity}
             />
           </h1>
@@ -35,10 +34,10 @@ const HeroSection = () => {
             digital solutions.
           </p>
           <div>
-            <button className="bg-linear-to-r from-[#6480ff] via-[#3e9bba] to-[#2fa3a1]  w-full sm:w-fit rounded-full text-white px-6 py-3 mr-4 hover:bg-slate-200">
+            <button className="bg-linear-to-r cursor-pointer from-[#6480ff] via-[#3e9bba] to-[#2fa3a1]  w-full sm:w-fit rounded-full text-white px-6 py-3 mr-4 hover:bg-slate-200">
               Hire Me
             </button>
-            <button className="px-1 py-1 w-full sm:w-fit  rounded-full bg-linear-to-br from-[#6480ff] via-[#3e9bba] to-[#2fa3a1] hover:bg-slate-800 text-white mt-3 ">
+            <button className="px-1 py-1 w-full sm:w-fit cursor-pointer rounded-full bg-linear-to-br from-[#6480ff] via-[#3e9bba] to-[#2fa3a1] hover:bg-slate-800 text-white mt-3 ">
               <div className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-3 ">
                 Download CV
               </div>

@@ -1,6 +1,8 @@
 @import "tailwindcss";
-
-
+  @import "tailwindcss";
+ @plugin "daisyui" {
+   themes: light --default, dark --prefersdark;
+ }
 body {
   padding: 1rem;
 }
