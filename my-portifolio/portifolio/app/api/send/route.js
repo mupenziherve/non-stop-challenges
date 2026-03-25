@@ -7,8 +7,8 @@ const fromEmail = process.env.FROM_EMAIL;
 export async function POST() {
   try {
     const { data, error } = await resend.emails.send({
-      from: 'Herve <mupenziherve04@gmail.com>',
-      to: ['mupenziherve80@gmail.com'],
+      from: '',
+      to: [''],
       subject: 'Hello world',
       react: <>
       <p>Email Body</p>
