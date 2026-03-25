@@ -15,6 +15,7 @@ const navLinks = [
 
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState('')
 
   useEffect(() => {
     const handleResize = () => {
@@ -23,26 +24,61 @@ const Navbar = () => {
       }
     }
 
+    const handleScroll = () => {
+      const sections = navLinks.map((link) => document.querySelector(link.path))
+
+      sections.forEach((section) => {
+        if (section) {
+          const rect = section.getBoundingClientRect()
+          if (rect.top <= 150 && rect.bottom >= 150) {
+            setActiveSection('#' + section.id)
+          }
+        }
+      })
+    }
+
     window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+      window.removeEventListener('scroll', handleScroll)
+    }
   }, [])
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-10 bg-[#121212]/80 backdrop-blur-md border-b border-white/10">
-      <div className="flex items-center justify-between mx-auto w-full max-w-350 px-6 md:px-12 lg:px-20 py-">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/5 backdrop-blur-xl border-b border-white/10 shadow-lg">
+      <div className="flex items-center justify-between mx-auto w-full max-w-7xl px-6 md:px-10 lg:px-16 py-4">
+
         <Link href="/" className="flex items-center">
           <Image
             src="/logo.svg"
             alt="MH Logo"
             width={120}
             height={120}
-            className="w-17 md:w-14 lg:w-20 xl:w-20 h-auto object-contain hover:scale-110 transition-transform duration-300"
+            className="w-14 md:w-16 lg:w-20 h-auto object-contain hover:scale-105 transition-transform duration-300"
             priority
           />
         </Link>
+
+        <div className="hidden md:flex">
+          <ul className="flex items-center gap-8 lg:gap-10 text-base lg:text-lg">
+            {navLinks.map((link) => (
+              <li key={link.title}>
+                <NavLink
+                  href={link.path}
+                  title={link.title}
+                  isActive={activeSection === link.path}
+                />
+              </li>
+            ))}
+          </ul>
+        </div>
+
+
         <button
           onClick={() => setNavbarOpen(!navbarOpen)}
-          className="flex items-center px-3 py-2 border rounded text-slate-200 hover:text-white hover:border-white md:hidden"
+          className="md:hidden flex items-center justify-center p-2 rounded-lg border border-white/20 text-slate-200 hover:text-white hover:border-white transition"
         >
           {navbarOpen ? (
             <XMarkIcon className="h-6 w-6" />
@@ -50,19 +86,16 @@ const Navbar = () => {
             <Bars3Icon className="h-6 w-6" />
           )}
         </button>
-        <div className="hidden md:flex">
-          <ul className="flex space-x-10 text-lg">
-            {navLinks.map((link, index) => (
-              <li key={index}>
-                <NavLink href={link.path} title={link.title} />
-              </li>
-            ))}
-          </ul>
-        </div>
       </div>
 
       {navbarOpen && (
-        <MenuOverlay links={navLinks} closeMenu={() => setNavbarOpen(false)} />
+        <div className="md:hidden bg-[#121212]/95 backdrop-blur-xl border-t border-white/10">
+          <MenuOverlay
+            links={navLinks}
+            closeMenu={() => setNavbarOpen(false)}
+            activeSection={activeSection}
+          />
+        </div>
       )}
     </nav>
   )

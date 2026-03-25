@@ -2,16 +2,15 @@
 
 import Link from 'next/link'
 
-const NavLink = ({ href, title, className = '', onClick }) => {
+const NavLink = ({ href, title, className = '', onClick, isActive }) => {
   const handleClick = (e) => {
     if (href.startsWith('#')) {
+      e.preventDefault()
       const element = document.querySelector(href)
       if (element) {
-        e.preventDefault()
         element.scrollIntoView({ behavior: 'smooth' })
       }
     }
-
 
     if (onClick) onClick()
   }
@@ -21,9 +20,17 @@ const NavLink = ({ href, title, className = '', onClick }) => {
       href={href}
       onClick={handleClick}
       scroll={false}
-      className={`text-[#ADB7BE] hover:text-white transition-colors duration-200 ${className}`}
+      className={`relative px-1 py-1 transition duration-300 ${
+        isActive ? 'text-white' : 'text-[#ADB7BE]'
+      } hover:text-white ${className}`}
     >
       {title}
+
+      <span
+        className={`absolute left-0 -bottom-1 h-[2px] bg-white transition-all duration-300 ${
+          isActive ? 'w-full' : 'w-0 group-hover:w-full'
+        }`}
+      />
     </Link>
   )
 }
