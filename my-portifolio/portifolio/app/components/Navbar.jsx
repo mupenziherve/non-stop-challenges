@@ -78,7 +78,7 @@ const Navbar = () => {
 
         <button
           onClick={() => setNavbarOpen(!navbarOpen)}
-          className="md:hidden flex items-center justify-center p-2 rounded-lg border border-white/20 text-slate-200 hover:text-white hover:border-white transition"
+          className="md:hidden flex items-center justify-center p-2 rounded-lg border border-white/20 text-slate-200 hover:text-white hover:border-sky-500 transition"
         >
           {navbarOpen ? (
             <XMarkIcon className="h-6 w-6" />
