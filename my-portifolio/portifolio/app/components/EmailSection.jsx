@@ -70,7 +70,6 @@ const EmailSection = () => {
       <div className="absolute top-10 left-10 w-72 h-72 bg-blue-500/20 blur-3xl rounded-full" />
       <div className="absolute bottom-10 right-10 w-72 h-72 bg-blue-500/20 blur-3xl rounded-full" />
 
-
       <div className="flex flex-col justify-center">
         <h5 className="text-3xl font-bold text-white mb-4">Let’s Connect</h5>
         <p className="text-gray-400 leading-relaxed max-w-md">
@@ -147,14 +146,14 @@ const EmailSection = () => {
               name="message"
               rows={5}
               placeholder="Write your message here..."
-              className="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+              className="w-full rounded-xl  bg-white/5 border border-white/10 px-4 py-3 text-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
             />
           </div>
 
           <button
             type="submit"
             disabled={status === 'loading'}
-            className="w-full py-3 rounded-xl bg-linear-to-r from-blue-500 via-cyan-500 to-teal-500 text-white font-semibold hover:opacity-90 transition duration-300 shadow-lg shadow-blue-500/20 disabled:opacity-50"
+            className="w-full py-3 rounded-xl bg-linear-to-r from-blue-500 via-cyan-500 to-teal-500 text-white font-semibold cursor-pointer hover:scale-101 hover:opacity-90 transition duration-300 shadow-lg shadow-blue-500/20 disabled:opacity-50"
           >
             {status === 'loading' ? 'Sending...' : 'Send Message'}
           </button>
