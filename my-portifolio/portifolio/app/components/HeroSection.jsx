@@ -11,11 +11,10 @@ const HeroSection = () => {
   }
 
   return (
-    <section>
+    <section className="lg:py-16">
       <div className="grid grid-cols-1 sm:grid-cols-12 ">
-
-        <div className="col-span-7 place-self-center text-center sm:text-left">
-          <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold">
+        <div className="col-span-7 place-self-center text-center sm:text-left justify-self-start">
+          <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-7xl font-extrabold">
             <span className="text-transparent bg-clip-text bg-linear-to-r from-[#6480ff] via-[#3e9bba] to-[#2fa3a1]">
               Hello, I'm{' '}
             </span>
@@ -24,9 +23,7 @@ const HeroSection = () => {
               sequence={[
                 'Herve',
                 1000,
-                'Front-end Developer ',
-                1000,
-                'Back-end Developer',
+                'Full-Stack Software Engineer',
                 1000,
                 'UI/UX Designer',
                 1000,
@@ -43,7 +40,6 @@ const HeroSection = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-
             <button
               onClick={handleHireMeClick}
               className="bg-linear-to-r cursor-pointer from-[#6480ff] via-[#3e9bba] to-[#2fa3a1]  w-full sm:w-fit rounded-full text-white px-6 py-3 hover:opacity-90 transition"
@@ -54,7 +50,7 @@ const HeroSection = () => {
             <a
               href="/Herve_Mupenzi_CV.pdf"
               download
-              className="w-full sm:w-fit cursor-pointer rounded-full p-[2px] bg-linear-to-r from-[#6480ff] via-[#3e9bba] to-[#2fa3a1] hover:opacity-90 transition"
+              className="w-full sm:w-fit cursor-pointer rounded-full p-0.5 bg-linear-to-r from-[#6480ff] via-[#3e9bba] to-[#2fa3a1] hover:opacity-90 transition"
             >
               <div className="block bg-[#121212] rounded-full px-5 py-3 text-white text-center">
                 Download CV
