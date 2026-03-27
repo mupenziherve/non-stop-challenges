@@ -13,7 +13,7 @@ const HeroSection = () => {
   return (
     <section className="lg:py-16">
       <div className="grid grid-cols-1 sm:grid-cols-12 ">
-        <div className="col-span-7 place-self-center text-center sm:text-left justify-self-start">
+        <div className="col-span-8 place-self-center text-center sm:text-left justify-self-start">
           <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-7xl font-extrabold">
             <span className="text-transparent bg-clip-text bg-linear-to-r from-[#6480ff] via-[#3e9bba] to-[#2fa3a1]">
               Hello, I'm{' '}
@@ -59,7 +59,7 @@ const HeroSection = () => {
           </div>
         </div>
 
-        <div className="col-span-5 flex justify-center mt-8 lg:mt-0">
+        <div className="col-span-4 flex justify-center mt-8 lg:mt-0">
           <div
             className="rounded-full overflow-hidden 
               w-50 h-50 

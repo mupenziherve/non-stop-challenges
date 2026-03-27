@@ -105,6 +105,19 @@ const EmailSection = () => {
               />
             </div>
           </Link>
+          <Link
+            href="https://www.linkedin.com/in/mupenzi-herve-6117582b3/"
+            target="_blank"
+          >
+            <div className="p-3 rounded-xl bg-white/5 hover:bg-white/10 transition backdrop-blur-md border border-white/10">
+              <Image
+                src="/projects/linkedin.svg"
+                alt="Linkedin"
+                width={24}
+                height={24}
+              />
+            </div>
+          </Link>
         </div>
       </div>
 

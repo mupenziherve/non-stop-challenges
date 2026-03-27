@@ -1,0 +1,80 @@
+[
+  {
+    "id": 1,
+    "title": "E-Commerce Store",
+    "description": "Developed a responsive e-commerce platform with product listing, cart functionality, and optimized UI for seamless user experience using modern React practices.",
+    "image": "/projects/store.png",
+    "category": "web",
+    "tags": ["web", "react"],
+    "tech": ["React", "Tailwind", "JavaScript"],
+    "gitUrl": "null",
+    "liveUrl": "",
+    "status": "completed",
+    "featured": true
+  },
+  {
+    "id": 2,
+    "title": "Travel Tours Website",
+    "description": "Built a responsive travel website showcasing curated tours and destinations with dynamic data rendering and clean UI/UX design.",
+    "image": "/projects/Backroads.png",
+    "category": "web",
+    "tags": ["web", "ui"],
+    "tech": ["React", "CSS", "Responsive Design"],
+    "gitUrl": "",
+    "liveUrl": "",
+    "status": "completed",
+    "featured": true
+  },
+  {
+    "id": 3,
+    "title": "Reviews Dashboard",
+    "description": "Created an interactive reviews system with dynamic content switching and smooth navigation to enhance user engagement.",
+    "image": "/projects/reviews.png",
+    "category": "web",
+    "tags": ["web", "react"],
+    "tech": ["React", "State Management"],
+    "gitUrl": "",
+    "liveUrl": "",
+    "status": "completed",
+    "featured": false
+  },
+  {
+    "id": 4,
+    "title": "Birthday Reminder App",
+    "description": "Designed a state-driven application to manage and display upcoming birthdays with efficient data handling in React.",
+    "image": "/projects/birthday.png",
+    "category": "web",
+    "tags": ["web", "app"],
+    "tech": ["React", "Hooks"],
+    "gitUrl": "",
+    "liveUrl": "",
+    "status": "completed",
+    "featured": false
+  },
+  {
+    "id": 5,
+    "title": "Book Library App",
+    "description": "Implemented a digital book management interface with dynamic rendering and structured data handling for improved usability.",
+    "image": "/projects/book.png",
+    "category": "web",
+    "tags": ["web", "ui"],
+    "tech": ["React", "JavaScript"],
+    "gitUrl": "",
+    "liveUrl": "",
+    "status": "completed",
+    "featured": false
+  },
+  {
+    "id": 6,
+    "title": "FAQ / Questions App",
+    "description": "Developed a dynamic FAQ system with collapsible components and smooth state transitions for better user interaction.",
+    "image": "/projects/questions.png",
+    "category": "web",
+    "tags": ["web", "ui"],
+    "tech": ["React", "UI Components"],
+    "gitUrl": "",
+    "liveUrl": "",
+    "status": "completed",
+    "featured": false
+  }
+]
