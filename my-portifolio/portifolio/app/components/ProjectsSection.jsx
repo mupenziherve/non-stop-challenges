@@ -1,122 +1,131 @@
 'use client'
-
 import React, { useState, useMemo, useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
-
 import ProjectCard from './ProjectCard'
 import ProjectTag from './ProjectTag'
-import PROJECTS from '../../data/projects.json'
+import { motion, useInView } from 'framer-motion'
 
+const PROJECTS = [
+  {
+    id: 1,
+    title: 'E-Commerce Store',
+    description:
+      'A modern online store with product browsing, cart functionality, and a smooth user experience.',
+    image: '/projects/store.png',
+    tags: ['All', 'Web'],
+    gitUrl: '',
+    previewUrl: 'https://next-store-project.netlify.app/',
+  },
+  {
+    id: 2,
+    title: 'Travel Tours Website',
+    description:
+      'A responsive travel platform for exploring tours and destinations with a clean and modern UI.',
+    image: '/projects/Backroads.png',
+    tags: ['All', 'Web'],
+    gitUrl: '',
+    previewUrl: 'https://iwacu-explore.netlify.app/',
+  },
+  {
+    id: 3,
+    title: 'Reviews Dashboard',
+    description:
+      'An interactive interface for displaying user reviews with dynamic content and smooth navigation.',
+    image: '/projects/reviews.png',
+    tags: ['All', 'Web'],
+    gitUrl: '',
+    previewUrl: 'https://unslpash-images.netlify.app/',
+  },
+  {
+    id: 4,
+    title: 'Birthday Reminder App',
+    description:
+      'A simple app to manage and display upcoming birthdays with clean state handling.',
+    image: '/projects/birthday.png',
+    tags: ['All', 'Web'],
+    gitUrl: '',
+    previewUrl: '',
+  },
+  {
+    id: 5,
+    title: 'Book Library App',
+    description:
+      'A digital library interface for browsing, managing, and exploring books.',
+    image: '/projects/book.png',
+    tags: ['All', 'Web'],
+    gitUrl: '',
+    previewUrl: 'https://best-selling-book-amazon.netlify.app/',
+  },
+  {
+    id: 6,
+    title: 'FAQ / Questions App',
+    description:
+      'A dynamic FAQ section with collapsible questions and smooth user interaction.',
+    image: '/projects/questions.png',
+    tags: ['All', 'Web'],
+    gitUrl: '',
+    previewUrl: '',
+  },
+]
 
 const TAGS = ['All', 'Web', 'Mobile']
-const INITIAL_COUNT = 6
 
 const ProjectsSection = () => {
   const [activeTag, setActiveTag] = useState('All')
-  const [showMore, setShowMore] = useState(false)
-
   const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: '-100px' })
 
-  const isInView = useInView(ref, {
-    once: true,
-    margin: '-100px',
-  })
-
-  // FILTER PROJECTS
   const filteredProjects = useMemo(() => {
-    if (activeTag === 'All') return PROJECTS
-    return PROJECTS.filter((p) => p.tags.includes(activeTag))
+    return PROJECTS.filter((project) => project.tags.includes(activeTag))
   }, [activeTag])
-
-  // SHOW LIMITED OR FULL LIST
-  const displayedProjects = useMemo(() => {
-    if (showMore) return filteredProjects
-    return filteredProjects.slice(0, INITIAL_COUNT)
-  }, [filteredProjects, showMore])
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.12,
-      },
-    },
-  }
 
   const cardVariants = {
     hidden: { y: 40, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: { duration: 0.4, ease: 'easeOut' },
-    },
+    visible: { y: 0, opacity: 1 },
   }
 
   return (
     <section id="projects" className="py-16 px-4 md:px-8">
-      {/* TITLE */}
+
       <h2 className="text-center text-3xl md:text-4xl font-bold text-white mb-10">
         My Projects
       </h2>
 
-      {/* TAG FILTERS */}
+
       <div className="flex justify-center flex-wrap gap-3 mb-12">
         {TAGS.map((tag) => (
           <ProjectTag
             key={tag}
             name={tag}
             isSelected={activeTag === tag}
-            onClick={(tag) => {
-              setActiveTag(tag)
-              setShowMore(false) // reset view more when filter changes
-            }}
+            onClick={setActiveTag}
           />
         ))}
       </div>
 
-      {/* PROJECT GRID */}
-      <motion.ul
-        ref={ref}
-        className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8"
-        variants={containerVariants}
-        initial="hidden"
-        animate={isInView ? 'visible' : 'hidden'}
-      >
-        {displayedProjects.length === 0 ? (
-          <p className="text-center text-gray-400 col-span-full">
-            No projects found for this category.
-          </p>
-        ) : (
-          displayedProjects.map((project) => (
-            <motion.li
-              key={project.id}
-              variants={cardVariants}
-              whileHover={{ scale: 1.03 }}
-            >
-              <ProjectCard
-                title={project.title}
-                description={project.description}
-                imgUrl={project.image}
-                gitUrl={project.gitUrl}
-                previewUrl={project.previewUrl}
-              />
-            </motion.li>
-          ))
-        )}
-      </motion.ul>
-
-      {/* VIEW MORE BUTTON */}
-      {filteredProjects.length > INITIAL_COUNT && (
-        <div className="flex justify-center mt-10">
-          <button
-            onClick={() => setShowMore(!showMore)}
-            className="px-6 py-3 rounded-full bg-gradient-to-r from-[#6480ff] via-[#3e9bba] to-[#2fa3a1] text-white font-medium hover:scale-105 transition"
+     
+      <ul ref={ref} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {filteredProjects.map((project, index) => (
+          <motion.li
+            key={project.id}
+            variants={cardVariants}
+            initial="hidden"
+            animate={isInView ? 'visible' : 'hidden'}
+            transition={{
+              duration: 0.4,
+              delay: index * 0.1, 
+              ease: 'easeOut',
+            }}
           >
-            {showMore ? 'Show Less' : 'View More'}
-          </button>
-        </div>
-      )}
+            <ProjectCard
+              title={project.title}
+              description={project.description}
+              imgUrl={project.image}
+              gitUrl={project.gitUrl}
+              previewUrl={project.previewUrl}
+            />
+          </motion.li>
+        ))}
+      </ul>
     </section>
   )
 }

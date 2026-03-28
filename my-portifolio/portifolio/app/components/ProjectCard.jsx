@@ -15,17 +15,16 @@ const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl }) => {
 
   return (
     <div className="group">
-      {/* IMAGE SECTION */}
       <div
         onMouseMove={handleMouseMove}
-        className="h-52 md:h-72 rounded-t-xl relative overflow-hidden cursor-pointer"
+        className="h-52 md:h-72 rounded-t-xl relative overflow-hidden group cursor-pointer"
         style={{
           background: `url(${imgUrl})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
       >
-        {/* glow effect */}
+      
         <div
           className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-300"
           style={{
@@ -33,44 +32,39 @@ const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl }) => {
           }}
         />
 
-        {/* overlay */}
+    
         <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 backdrop-blur-sm transition-all duration-500 flex items-center justify-center gap-4">
-          {/* CODE ICON (GitHub) */}
-          {gitUrl && (
-            <Link
-              href={gitUrl}
-              target="_blank"
-              className="h-14 w-14 border-2 rounded-full border-[#ADB7BE] flex items-center justify-center
-              hover:scale-110 hover:border-white transition-all duration-300 group/link"
-            >
-              <CodeBracketIcon className="h-8 w-8 text-[#ADB7BE] group-hover/link:text-white" />
-            </Link>
-          )}
+          <Link
+            href={gitUrl}
+            className="h-14 w-14 border-2 rounded-full border-[#ADB7BE] flex items-center justify-center
+            transform transition-all duration-300 hover:scale-110 hover:border-white hover:shadow-lg hover:shadow-white/20 group/link"
+          >
+            <CodeBracketIcon className="h-8 w-8 text-[#ADB7BE] transition-colors duration-300 group-hover/link:text-white" />
+          </Link>
 
-          {/* EYE ICON (Preview) */}
-          {previewUrl && (
-            <Link
-              href={previewUrl}
-              target="_blank"
-              className="h-14 w-14 border-2 rounded-full border-[#ADB7BE] flex items-center justify-center
-              hover:scale-110 hover:border-white transition-all duration-300 group/link"
-            >
-              <EyeIcon className="h-8 w-8 text-[#ADB7BE] group-hover/link:text-white" />
-            </Link>
-          )}
+          <Link
+            href={previewUrl}
+            className="h-14 w-14 border-2 rounded-full border-[#ADB7BE] flex items-center justify-center
+            transform transition-all duration-300 hover:scale-110 hover:border-white hover:shadow-lg hover:shadow-white/20 group/link"
+          >
+            <EyeIcon className="h-8 w-8 text-[#ADB7BE] transition-colors duration-300 group-hover/link:text-white" />
+          </Link>
         </div>
 
-        {/* border glow */}
+    
         <div className="absolute inset-0 rounded-t-xl pointer-events-none group-hover:ring-2 group-hover:ring-white/20 transition-all duration-300" />
       </div>
 
-      {/* TEXT SECTION */}
-      <div className="text-white rounded-b-xl mt-3 bg-[#181818] py-6 px-4 group-hover:bg-[#1f1f1f] transition-all duration-300">
-        <h5 className="text-xl font-semibold mb-2 group-hover:translate-x-1 transition-transform">
+     
+      <div
+        className="text-white rounded-b-xl mt-3 bg-[#181818] py-6 px-4 
+        transition-all duration-300 group-hover:bg-[#1f1f1f] group-hover:shadow-xl group-hover:shadow-black/40"
+      >
+        <h5 className="text-xl font-semibold mb-2 transition-transform duration-300 group-hover:translate-x-1">
           {title}
         </h5>
 
-        <p className="text-[#ADB7BE] md:text-xl lg:text-xl group-hover:translate-x-1 transition-transform">
+        <p className="text-[#ADB7BE] md:text-xl lg:text-xl transition-transform duration-300 group-hover:translate-x-1">
           {description}
         </p>
       </div>
