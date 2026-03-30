@@ -1,8 +1,9 @@
 'use client'
+
 import Image from 'next/image'
 import { TypeAnimation } from 'react-type-animation'
 import { Phone, Mail } from 'lucide-react'
-
+import { motion } from 'framer-motion'
 
 const ContactItem = ({ icon: Icon, text, href }) => {
   return (
@@ -30,11 +31,17 @@ const HeroSection = () => {
   }
 
   return (
-    <section className="lg:py-16 lg:pl-15 px-4">
+    <section className="lg:py-16 lg:pl-16 px-4">
       <div className="grid grid-cols-1 sm:grid-cols-12 gap-10 items-center">
-        <div className="col-span-8 text-center sm:text-left">
+   
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="col-span-8 text-center sm:text-left"
+        >
           <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-7xl font-extrabold leading-tight">
-            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#6480ff] via-[#3e9bba] to-[#2fa3a1]">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6480ff] via-[#3e9bba] to-[#2fa3a1]">
               Hello, I'm
             </span>
             <br />
@@ -75,7 +82,7 @@ const HeroSection = () => {
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
             <button
               onClick={handleHireMeClick}
-              className="bg-linear-to-r from-[#6480ff] via-[#3e9bba] to-[#2fa3a1] w-full sm:w-fit rounded-full text-white px-6 py-3 hover:opacity-90 transition shadow-lg hover:shadow-cyan-500/30"
+              className="bg-gradient-to-r from-[#6480ff] via-[#3e9bba] to-[#2fa3a1] w-full sm:w-fit rounded-full text-white px-6 py-3 hover:opacity-90 transition shadow-lg hover:shadow-cyan-500/30"
             >
               Hire Me
             </button>
@@ -83,25 +90,23 @@ const HeroSection = () => {
             <a
               href="/Herve_Mupenzi_CV.pdf"
               download
-              className="w-full sm:w-fit rounded-full p-[2px] bg-linear-to-r from-[#6480ff] via-[#3e9bba] to-[#2fa3a1] hover:opacity-90 transition"
+              className="w-full sm:w-fit rounded-full p-0.5 bg-gradient-to-r from-[#6480ff] via-[#3e9bba] to-[#2fa3a1] hover:opacity-90 transition"
             >
               <div className="bg-[#121212] rounded-full px-6 py-3 text-white text-center hover:bg-[#1a1a1a] transition">
                 Download CV
               </div>
             </a>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="col-span-4 flex justify-center items-center mt-10 lg:mt-0">
-          <div
-            className="
-      relative rounded-full overflow-hidden 
-      w-40 h-40 
-      sm:w-56 sm:h-56 
-      lg:w-72 lg:h-72
-      border-4 border-[#33353F]
-    "
-          >
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="col-span-4 flex justify-center items-center mt-10 lg:mt-0"
+        >
+          <div className="relative rounded-full overflow-hidden w-40 h-40 sm:w-56 sm:h-56 lg:w-72 lg:h-72 border-4 border-[#33353F]">
             <Image
               src="/passport.png"
               alt="hero image"
@@ -110,7 +115,7 @@ const HeroSection = () => {
               priority
             />
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   )
